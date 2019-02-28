@@ -60,6 +60,19 @@ namespace CashRegister.BLL.Services
             return Mapper.Map<Product, ProductDTO>(product);
         }
 
+       
+        public decimal GetTotal(int id)
+        {
+            var ShoppingOrderId = Database.Orders.Get(id);
+            
+            decimal? total = decimal.Zero;
+            /*total = (decimal?)(from orderItems in Database.Orders
+                               where orderItems.CartId == ShoppingOrderId
+                               select (int?)orderItems.Quantity *
+                               orderItems.Product.UnitPrice).Sum();*/
+            return total ?? decimal.Zero;
+        }
+
         public void Dispose()
         {
             Database.Dispose();

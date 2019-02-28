@@ -29,16 +29,84 @@ namespace CashRegister.DAL.EF
     {
         protected override void Seed(CashRegisterContext db)
         {
-            IList<Category> categories = new List<Category>
-            {
-                new Category() { Name = "Retail" },
-                new Category() { Name = "Promotion" }
-            };
-            Product product1 = new Product { Name = "Tangerines", Price = 1 };
-            Product product2 = new Product { Name = "Honey", Price = 1 };
-            Product product3 = new Product { Name = "Cables", Price = 1 };
+            GetCategories().ForEach(c => db.Categories.Add(c));
+            GetProducts().ForEach(p => db.Products.Add(p));
 
             db.SaveChanges();
+        }
+
+        private static List<Category> GetCategories()
+        {
+            var categories = new List<Category> {
+                new Category
+                {
+                   Id = 1,
+                   Name = "Retail"
+                },
+                new Category
+                {
+                    Id = 2,
+                    Name = "Promotion"
+                },
+                new Category
+                {
+                    Id = 3,
+                    Name = "Wholesale"
+                },
+            };
+
+            return categories;
+        }
+
+        private static List<Product> GetProducts()
+        {
+            var products = new List<Product> {
+                new Product
+                {
+                    Id = 1,
+                    Name = "Tangerines",
+                    Price = 80,
+                    CategoryID = 2
+                    
+               },
+                new Product
+                {
+                    Id = 2,
+                    Name = "Tangerines",
+                    Price = 30,
+                    CategoryID = 2
+               },
+                new Product
+                {
+                   Id = 3,
+                    Name = "Honey",
+                    Price = 220,
+                    CategoryID = 2
+                },
+                new Product
+                {
+                   Id = 4,
+                    Name = "Honey",
+                    Price = 100,
+                    CategoryID = 1
+                },
+                new Product
+                {
+                   Id = 5,
+                    Name = "Cables",
+                    Price = 85,
+                    CategoryID = 3
+                },
+                new Product
+                {
+                   Id = 3,
+                    Name = "Cables",
+                    Price = 10,
+                    CategoryID = 1
+                },
+            };
+
+            return products;
         }
     }
 }

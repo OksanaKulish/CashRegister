@@ -15,7 +15,19 @@ namespace CashRegister.WEB
         static void Main(string[] args)
         {
             IKernel kernel = new StandardKernel(new ServiceModule());
-            ICashController cashController = kernel.Get<CashController>();
+            ICashController cashService = kernel.Get<CashController>();
+
+            var res = cashService.GetProductsByCategory("Promotion");
+            foreach (var product in res)
+            {
+                Console.WriteLine(product.Name);
+            }
+            Console.WriteLine("Request");
+            var res1 = cashService.GetProductsByPrice(80);
+            foreach (var product in res1)
+            {
+                Console.WriteLine(product.Name);
+            }
         }
     }
 }

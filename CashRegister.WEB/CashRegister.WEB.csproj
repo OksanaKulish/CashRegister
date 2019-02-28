@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Controller\CashController.cs" />
     <Compile Include="Interface\ICashController.cs" />
     <Compile Include="Mapping\MappingWEBProfile.cs" />

@@ -10,7 +10,11 @@ namespace CashRegister.DAL.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Category Category { get; set; }
+        
+        public int? CategoryID { get; set; }
+
+        public virtual Category Category { get; set; }
+
         public decimal Price { get; set; }
 
         public ICollection<Order> Orders { get; set; }
