@@ -10,8 +10,15 @@ namespace CashRegister.BLL.Interfaces
     public interface IOrderService
     {
         void MakeOrder(OrderDTO orderDto);
+
         ProductDTO GetProduct(int? id);
+
         IEnumerable<ProductDTO> GetProducts();
+
+        IEnumerable<ProductDTO> GetProductsByCategory(string category);
+
+        IEnumerable<ProductDTO> GetProductsByPrice(decimal price);
+
         void Dispose();
     }
 }

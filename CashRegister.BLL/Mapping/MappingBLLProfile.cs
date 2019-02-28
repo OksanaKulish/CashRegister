@@ -14,6 +14,7 @@ namespace CashRegister.BLL.Mapping
         public MappingBLLProfile()
         {
             CreateMap<Product, ProductDTO>().ReverseMap();
+
             CreateMap<Order, OrderDTO>().ReverseMap();
         }
     }

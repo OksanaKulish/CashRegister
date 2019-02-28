@@ -20,12 +20,25 @@ namespace CashRegister.BLL.Services
             Database = unitOfWork;
         }
 
+        public IEnumerable<ProductDTO> GetProductsByPrice(decimal price)
+        {
+            IEnumerable<Product> products = Database.Products.Find(product => product.Price == price);
+            return Mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(products);
+        }
+
+        public IEnumerable<ProductDTO> GetProductsByCategory(string category)
+        {
+            IEnumerable<Product> products = Database.Products.Find(product => product.Category.Name == category);
+            return Mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(products);
+        }
+
         public void MakeOrder(OrderDTO orderDTO)
         {
             Product product = Database.Products.Get(orderDTO.Id);
 
             if (product == null)
                 throw new Exception("Product was not founded");
+
             Order order = Mapper.Map<OrderDTO, Order>(orderDTO);
             Database.Orders.Create(order);
             Database.Save();
@@ -42,7 +55,7 @@ namespace CashRegister.BLL.Services
                 throw new Exception("Product is null");
             var product = Database.Products.Get(id.Value);
             if (product == null)
-                throw new Exception("Телефон не найден");
+                throw new Exception("Product was not founded");
 
             return Mapper.Map<Product, ProductDTO>(product);
         }

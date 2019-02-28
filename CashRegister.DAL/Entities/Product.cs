@@ -14,6 +14,7 @@ namespace CashRegister.DAL.Entities
         public decimal Price { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+
         public Product()
         {
             Orders = new List<Order>();

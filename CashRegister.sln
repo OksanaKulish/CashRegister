@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashRegister.DAL", "CashReg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashRegister.BLL", "CashRegister.BLL\CashRegister.BLL.csproj", "{CEB0C11A-D940-4E60-B4E6-9C24E4201AB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashRegister.WEB", "CashRegister.WEB\CashRegister.WEB.csproj", "{426E00ED-4820-4AA5-95AC-EB7690148F74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CEB0C11A-D940-4E60-B4E6-9C24E4201AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB0C11A-D940-4E60-B4E6-9C24E4201AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB0C11A-D940-4E60-B4E6-9C24E4201AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426E00ED-4820-4AA5-95AC-EB7690148F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426E00ED-4820-4AA5-95AC-EB7690148F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426E00ED-4820-4AA5-95AC-EB7690148F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426E00ED-4820-4AA5-95AC-EB7690148F74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

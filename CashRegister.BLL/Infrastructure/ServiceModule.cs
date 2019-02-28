@@ -1,4 +1,6 @@
-﻿using CashRegister.DAL.Interfaces;
+﻿using CashRegister.BLL.Interfaces;
+using CashRegister.BLL.Services;
+using CashRegister.DAL.Interfaces;
 using CashRegister.DAL.Repositories;
 using Ninject.Modules;
 using System;
@@ -11,14 +13,15 @@ namespace CashRegister.BLL.Infrastructure
 {
     public class ServiceModule : NinjectModule
     {
-        private readonly string connectionString;
+        /*private readonly string connectionString;
         public ServiceModule(string connection)
         {
             connectionString = connection;
-        }
+        }*/
         public override void Load()
         {
-            Bind<IUnitOfWork>().To<EFUnitOfWork>().WithConstructorArgument(connectionString);
+            Bind<IUnitOfWork>().To<EFUnitOfWork>().WithConstructorArgument("DefaultConnection");
+            Bind(typeof(IOrderService)).To(typeof(OrderService)).InSingletonScope();
         }
     }
 }

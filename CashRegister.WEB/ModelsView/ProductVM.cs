@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.BLL.DTO
+namespace CashRegister.WEB.ModelsView
 {
-    public class ProductDTO
+    public class ProductVM
     {
         public int Id { get; set; }
-        public string Name { get; set; }       
+        public string Name { get; set; }
     }
 }
-

@@ -29,7 +29,16 @@ namespace CashRegister.DAL.EF
     {
         protected override void Seed(CashRegisterContext db)
         {
-            
+            IList<Category> categories = new List<Category>
+            {
+                new Category() { Name = "Retail" },
+                new Category() { Name = "Promotion" }
+            };
+            Product product1 = new Product { Name = "Tangerines", Price = 1 };
+            Product product2 = new Product { Name = "Honey", Price = 1 };
+            Product product3 = new Product { Name = "Cables", Price = 1 };
+
+            db.SaveChanges();
         }
     }
 }
